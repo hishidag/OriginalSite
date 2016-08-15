@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title th:text="#{title}"></title>
+	</head>
+	<body>
+		<h1>形態素解析</h1>
+		<ul style="list-style: none;padding:0;">
+		<li>ここにコピーした文章をペーストして解析ボタンを押すと、形態素解析された文章が表示されます</li>
+		<li>言語によって解析結果が変わりますので、言語の選択をしてください</li>
+		<li>対応している言語は、英語、フランス語、ドイツ語、スペイン語です</li>
+		<li>なお、この処理には1分程度かかることがあります</li>
+		</ul>
+		<form action="/result" th:action="@{'/result'}" method="post" th:object="${exchange}">
+			<textarea name="text" rows="10" cols="100" placeholder="ここに文章を入力してください" th:text="${input.text}" th:object="${exchange}"></textarea><br />
+			<select name="lang">
+				<option th:each="key : ${lang}" th:value="${key.key}" th:text="${key.value}" th:selected="${key.key == input.lang}">言語リスト</option>
+			</select>
+			<button type="reset">リセット</button>
+			<button type="submit">解析</button>
+		</form>
+		<br />
+		<div>
+			<a th:href="${'/'}" th:text="#{return.top}"></a>
+		</div>
+	</body>
+</html>
