@@ -60,6 +60,7 @@ public class RegistrationController {
 	public String result(SessionStatus session, @ModelAttribute("user") User user, Model model){
 		service.create(user);
 		model.addAttribute("user", user);
+		//SessionStatusと@ModelAttributeを引数に置くことでそのセッションを破棄できる
 		session.setComplete();
 		return "registration/result";
 	}

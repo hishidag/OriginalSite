@@ -36,7 +36,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 			//premitAll()が与えられたurlはログインしていない状態でも遷移可能
 			.antMatchers("/js/**","/css/**").permitAll()
 			.antMatchers("/","/loginForm","/Registration/**","/newslink","/news/**"
-					,"/input","/result","/contact/**","/description","/translator","/redirect").permitAll()
+					,"/input","/result","/contact/**","/description","/translator").permitAll()
 			.antMatchers("/**").authenticated()
 			//認証方式をform認証へ
 		.and().formLogin()

@@ -12,12 +12,12 @@
 		<li>対応している言語は、英語、フランス語、ドイツ語、スペイン語です</li>
 		<li>なお、この処理には1分程度かかることがあります</li>
 		</ul>
-		<form action="/result" th:action="@{'/result'}" method="post" th:object="${exchange}">
+		<form action="/result" th:action="@{'/result'}" method="post" th:object="${exchange}" name="input">
 			<textarea name="text" rows="10" cols="100" placeholder="ここに文章を入力してください" th:text="${input.text}" th:object="${exchange}"></textarea><br />
 			<select name="lang">
 				<option th:each="key : ${lang}" th:value="${key.key}" th:text="${key.value}" th:selected="${key.key == input.lang}">言語リスト</option>
 			</select>
-			<button type="reset">リセット</button>
+			<button type="button" onclick="document.input.text.value=''">リセット</button>
 			<button type="submit">解析</button>
 		</form>
 		<br />
