@@ -19,7 +19,7 @@
 		</table>
 		<p>更新しました</p>
 		<br />		
-		<div><a th:href="@{/wordlist}" th:text="単語リストに戻る"></a> <a th:href="@{/}" th:text="#{return.top}"></a></div>
+		<div><a th:href="@{'/wordlist/' + ${word.language}}" th:text="単語リストに戻る"></a> <a th:href="@{/}" th:text="#{return.top}"></a></div>
 		</div>
 	</body>
 </html>

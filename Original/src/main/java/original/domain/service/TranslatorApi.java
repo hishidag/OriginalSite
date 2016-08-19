@@ -21,7 +21,7 @@ public class TranslatorApi {
 	public String getAccessToken(@RequestParam String word,@RequestParam String language) throws Exception{
 		// Set the Client ID / Client Secret once per JVM. It is set statically and applies to all services
         Translate.setClientId("hishidag");
-        Translate.setClientSecret("vualaiJmuIr/+H0LEcHigWX2C1FWjKkMhMhOz/m2HyQ=");
+        Translate.setClientSecret("");
         
         Language from;
         if(language.equals("English")){

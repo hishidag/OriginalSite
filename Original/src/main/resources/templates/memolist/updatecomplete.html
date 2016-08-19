@@ -19,7 +19,7 @@
 		</table>
 		<p>更新しました</p>
 		<br />		
-		<div><a th:href="@{/memolist}" th:text="メモに戻る"></a> <a th:href="@{/}" th:text="#{return.top}"></a></div>
+		<div><a th:href="@{'/memolist/' + ${memo.language}}" th:text="メモに戻る"></a> <a th:href="@{/}" th:text="#{return.top}"></a></div>
 		</div>
 	</body>
 </html>

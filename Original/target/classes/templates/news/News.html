@@ -13,7 +13,7 @@
 				<ol>
 					<li th:each="rss : ${news}" th:object="${rss}">
 						<a th:href="@{*{link}}" th:text="*{title}"></a>
-						<div style="font-size:small;" th:text="*{date}"></div>
+						<div style="font-size:small;" th:text="*{#dates.format(date,'yyyy年MM月dd日 hh時mm分')}"></div>
 						<div th:utext="*{comment}"></div>
 						<br />
 					</li>		

@@ -56,7 +56,7 @@ public class Exchange {
 			parse = "edu/stanford/nlp/models/lexparser/spanishPCFG.ser.gz";
 			pos   = "edu/stanford/nlp/models/pos-tagger/spanish/spanish-distsim.tagger";
 			country = "es";
-		}/*else if(language.equals("中国語")){
+		}/*else if(language.equals("中国語")){いつか実装する予定
 			annotators = "segment, ssplit, pos, lemma, ner, parse";
 			parse = "edu/stanford/nlp/models/lexparser/chineseFactored.ser.gz";
 			pos   = "edu/stanford/nlp/models/pos-tagger/chinese-distsim/chinese-distsim.tagger";
@@ -73,6 +73,7 @@ public class Exchange {
 		cNLP.annotate(anno);
 		List<CoreLabel> labels = anno.get(TokensAnnotation.class);
 
+		//サニタイズされた記号を復元
 		for (CoreLabel label : labels) {
 			String word = label.get(TextAnnotation.class);
 			switch(word){
