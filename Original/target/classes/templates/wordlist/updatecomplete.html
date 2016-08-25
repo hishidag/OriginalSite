@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title th:text="#{title}"></title>
+	</head>
+	<body>
+		<div align="center">
+			<h1>メモ</h1>
+		<table border="1">
+			<tr>
+			<th style="width:30em;">単語</th>
+			<th style="width:30em;">意味</th>
+			</tr>		
+			<tr>
+			<td align="center" valign="middle" th:text="${word.altword}"></td>
+			<td align="center" valign="middle" th:text="${word.translation}"></td>
+			</tr>
+		</table>
+		<p>更新しました</p>
+		<br />		
+		<div><a th:href="@{'/wordlist/' + ${word.language}}" th:text="単語リストに戻る"></a> <a th:href="@{/}" th:text="#{return.top}"></a></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="memo">
+	<body>
+		<div style="position:fixed; width:18%; margin-left:80.5%; margin-top:20%" id="memorize">
+			<form th:action="@{'/Memo'}" method="post" target="upload">
+				<div>
+					<input type="hidden" name="language" th:value="${language}" />
+					<textarea style="width:100%;" rows="15" name="memo" placeholder="ここに入力した内容をメモとして保存できます"></textarea>
+				</div>
+				<div align="right">
+					<button type="reset">リセット</button>
+					<button type="submit">登録</button>
+				</div>
+				<iframe name="upload" style="display:none;"></iframe>
+			</form>
+			<div id="output_data"></div>
+		</div>
+	</body>
+</html>

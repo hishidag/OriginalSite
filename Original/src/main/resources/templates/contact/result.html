@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+         <title th:text="#{title}"></title>
+	</head>
+	<body>
+		<div align="center">
+		<h1>お問い合わせフォーム</h1>
+		<h3>お問い合わせありがとうございました</h3>
+		<table>
+		<tr>
+			<th>名前:</th>
+			<td><div th:text="${contact.name}" ></div></td>		
+		</tr>
+		<tr>
+			<th>件名:</th>
+			<td style="width:350px;"><div th:text="${contact.subject}"></div></td>
+		</tr>
+		<tr>
+			<th>要件:</th>
+			<td style="width:350px;"><div th:text="${contact.text}"></div></td>
+		</tr>
+		</table>
+		<br />
+		<div><a th:href="@{/}" th:text="#{return.top}"></a></div>
+		</div>
+	</body>
+</html>

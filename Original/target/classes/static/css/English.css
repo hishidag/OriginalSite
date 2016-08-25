@@ -1,0 +1,87 @@
+.NNP, .NNPS{
+	border-color: red!important;
+	border-bottom: solid 1px;
+}
+
+.VBD, .VBG, .VBP, .VBZ, .VB, .VBN, .MD{
+	border-color:lightgreen!important;
+	border-bottom: solid 1px;
+}
+
+.DT, .ART{
+	border-color:purple!important;	
+	border-bottom: solid 1px;
+}
+
+.NN, .NNS, .EX{
+	border-color:blue!important;	
+	border-bottom: solid 1px;
+}
+
+.JJ, .JJR, .JJS, .ADV{
+	border-color:olive!important;	
+	border-bottom: solid 1px;
+}
+
+.IN, .TO{
+	border-color:oranpe!important;	
+	border-bottom: solid 1px;
+}
+
+.CC, .CD, .KON{
+	border-color:pink!important;	
+	border-bottom: solid 1px;
+}
+
+.PRP\$, .PRP{
+	border-color:grey!important;	
+	border-bottom: solid 1px;
+}
+
+.WP, .WRB, .WDT ,.POS{
+	border-color:black!important;	
+	border-bottom: solid 1px;
+}
+
+.RB, .RBR, .JJR{
+	border-color:skyblue!important;	
+	border-bottom: solid 1px;
+}
+
+#analyze{
+	position:relative;
+	margin:0 2%;
+}
+
+
+
+div[id = 'analyze'] span{
+	font-size:1.25em;
+	line-height:30px;
+	white-space: nowrap;
+}
+
+div[id = 'analyze'] span:hover{  
+	position: static;
+	font-weight:bold;
+	padding:3px;
+	border:solid 2px;
+	
+}
+
+div[class = 'pos']{
+	display: block;
+  	position: absolute;
+	z-index: 9999;
+	font-size:0.7em;
+	width: auto;
+	height: auto;
+	white-space:nowrap;
+  	padding: 0.2em 0.5em;
+  	color: #FFFFFF;
+  	background: #c72439;
+  	border-radius: 0.5em;  	
+}
+
+
+

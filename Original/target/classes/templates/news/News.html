@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title th:text="#{title}"></title>
+	</head>
+	<body>
+		<div align="center">
+			<h1 th:if="${toptitle}" th:text="${toptitle}">タイトル</h1>
+			<h1 th:if="${getrss}" th:text="${getrss}">タイトル</h1>
+			<h1 th:if="${getrss}" th:text="から取得したRSS一覧"></h1>
+			<div align="left">
+				<ol>
+					<li th:each="rss : ${news}" th:object="${rss}">
+						<a th:href="@{*{link}}" th:text="*{title}"></a>
+						<div style="font-size:small;" th:text="*{#dates.format(date,'yyyy年MM月dd日 hh時mm分')}"></div>
+						<div th:utext="*{comment}"></div>
+						<br />
+					</li>		
+				</ol>
+			</div>
+			<a href="javascript:window.close()" onclick="window.close()" th:text="閉じる"></a>					
+		</div>
+	</body>
+</html>

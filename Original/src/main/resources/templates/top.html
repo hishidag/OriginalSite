@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title th:text="#{title}"></title>
+	</head>
+	<body>
+		<div align="center">
+			<h1>外国語の文章を読もう！</h1>
+			<p th:if="${user == null}">ログインすることで単語・メモを利用できます</p>
+			<p th:if="${user != null}" th:inline="text">ようこそ[[${user.name}]]さん</p>
+
+			<p><a href="description.html" th:href="@{/description}">このサイトの目的</a></p>
+
+			<p><a href="input.html" th:href="@{/input}">解析ページ</a></p>
+
+			<p><a href="newslink.html" th:href="@{/news}" target="_blank">ニュースリンク</a></p>
+
+			<p th:unless="${user == null}">単語<br />
+			<span th:each="list:${lang}"><a href="wordlist.html" th:href="@{'/wordlist/' + ${list.key}}" th:text="${list.value}">単語</a></span></p>
+
+			<p th:unless="${user == null}">メモ<br />
+			<span th:each="list:${lang}"><a href="memolist.html" th:href="@{'/memolist/' + ${list.key}}" th:text="${list.value}">言語</a></span></p>
+
+			<p th:if="${user == null}"><a href="login.html" th:href="@{/loginForm}">ログイン</a></p>
+			<p th:unless="${user == null}"><a href="logout.html" th:href="@{/mypage}">登録内容確認</a></p>						
+			<p th:unless="${user == null}"><a href="logout.html" th:href="@{/logout}">ログアウト</a></p>						
+
+			<p><a href="contact.html" th:href="@{/contact}">ご意見・ご要望</a></p>
+		</div>
+	</body>
+</html>
